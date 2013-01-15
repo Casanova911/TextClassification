@@ -1,8 +1,9 @@
-
+from data import Data
 
 def main():
-    print 'hello world!'
+    data = Data()
+    data.load_text('test') 
 
 if __name__ == '__main__':
-    main()
-    sub()
+    main()    
+    
