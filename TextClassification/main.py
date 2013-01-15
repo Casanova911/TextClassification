@@ -4,7 +4,7 @@ def sub():
     print '@@'
 
 def main():
-    print 'hello world!'
+    print 'Now, hello Git!'
 
 if __name__ == '__main__':
     main()
