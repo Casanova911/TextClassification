@@ -1,5 +1,5 @@
-
-
+import os
+import codecs
 
 class Data(object):
     def __init__(self):
@@ -42,8 +42,21 @@ class Data(object):
                 IOError: An error occurred accessing the directory.
                           
         '''
-        print path
-        
+        print 'Load text in: ' + path
+        text_data = {}
+        for topic in os.listdir(path):
+            if os.path.isdir(path + topic):
+                text_data[topic] = {}
+                topic_path = path + topic + '\\'
+                for file in os.listdir(topic_path):                    
+                    if os.path.isfile(topic_path + file):
+                        txt = codecs.open(topic_path + file, 'r', 'utf-8')
+                        content = txt.read()
+                        txt.close()                        
+                        text_data[topic][file] = content
+                
+        return text_data
+                    
         
     
         
