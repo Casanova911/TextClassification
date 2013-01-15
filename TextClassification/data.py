@@ -1,5 +1,6 @@
 import os
 import codecs
+import pickle
 
 class Data(object):
     def __init__(self):
@@ -53,9 +54,15 @@ class Data(object):
                         txt = codecs.open(topic_path + file, 'r', 'utf-8')
                         content = txt.read()
                         txt.close()                        
-                        text_data[topic][file] = content
+                        text_data[topic][file] = content.encode('utf-8')
                 
         return text_data
+    
+    def load_vocabulary(self, path):
+        input = open(path, 'rb')
+        vocabulary = pickle.load(input)
+        input.close()    
+        return vocabulary
                     
         
     
