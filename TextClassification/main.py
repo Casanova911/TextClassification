@@ -11,8 +11,8 @@ def main():
     classifier = NaiveBayes(training_data, get_all_words)
     evaluate = EvaluateClassifier() 
     evaluate.print_evaluation(classifier, test_data)          
-    #vocab = data.load_vocabulary('vocab.txt') 
-    #print classifier.classify('du lịch')
+    # vocab = data.load_vocabulary('vocab.txt') 
+    # print classifier.classify('du l?ch')
      
 if __name__ == '__main__':
     main()    

@@ -1,10 +1,20 @@
 
 
 class NaiveBayes(object):
-    def __init__(self, data, feature_extractor):
+    def __init__(self, data, feature_extractor, vocabulary, load_model, model_name):
         '''
+            Training (and save) classify model or load model from data using 
+            feature_extractor ( and maybe using vocabulary)  
+            
             Args:
+                data: label text to training model
+                feature_extractor: a function to extract feature from a text
+                vocabulary: a vocabulary to limit feature 
+                load_model: option to load model from specific file without
+                    training
+                model_name: name of model (to save or load)
             Return:
+                a classifier using bayes method
         '''
         print 'New Naive Bayes object was created'
         self.labels = [label for label in data]
